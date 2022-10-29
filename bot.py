@@ -1,3 +1,6 @@
+import db 
+import weather
+
 
 from aiogram import Bot, Dispatcher,executor
 from aiogram.types import Message

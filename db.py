@@ -16,4 +16,17 @@ def create_user_table():
 
 create_user_table()
 
+def register_users(
+    telegram_id:int,
+    username:str,
+    first_name:str,
+    last_name:str,
+    full_name:str
+):
+   db=sqlite3.connect("db.db")
+   cursor=db.cursor()
+   cursor.execute("""INSERT INTO Users(telegram_id,username,first_name,last_name,full_name) VALUES(?,?,?,?,?)"""), (telegram_id,username,first_name,last_name,full_name)
+   db.commit()
+   db.close()
+
 
